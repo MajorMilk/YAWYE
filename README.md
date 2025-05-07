@@ -6,7 +6,7 @@ Ever felt that munching on a specific food in Minecraft should give you a little
 
 *   **Thematic Buffs:** Gain appropriate status effects after eating different foods.
     *   Eat an **Apple** for a quick burst of **Regeneration**.
-    *   Devour **Cooked Beef** for temporary **Strength**.
+    *   Devour **Cooked Beef** for temporary **Resistance**.
     *   Snack on a **Cookie** for a **Speed** boost.
     *   Enjoy **Baked Potatoes** for powerful **Haste** while mining.
     *   ...and many more! (Discover them in-game!)
@@ -29,7 +29,7 @@ Raw foods have a chance-based system for negative effects, while most cooked/pre
 *   **Beetroot:** Haste I (1 minute)
 *   **Various Stews (Beetroot, Rabbit, Mushroom):** Saturation (instant boost)
 *   **Golden Apple/Carrot/Enchanted Golden Apple:** Luck I (1 minute)
-*   **Cooked Beef:** Strength I (30 seconds)
+*   **Cooked Beef:** Resistance I (30 seconds)
 *   **Cooked Chicken:** Jump Boost I (30s) & Slow Falling (30s)
 *   **Cooked Fish (Cod/Salmon):** Dolphin's Grace (30s) & Water Breathing (30s)
 *   **Cookie:** Speed I (20 seconds)

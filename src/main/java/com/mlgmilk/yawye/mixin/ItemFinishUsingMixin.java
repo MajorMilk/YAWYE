@@ -31,18 +31,17 @@ public abstract class ItemFinishUsingMixin {
             if (stack.contains(DataComponentTypes.FOOD)) { // Check if it's food
                 yawye.LOGGER.info("Player {} finished eating {} via Mixin", player.getName().getString(), item.getName().getString());
 
-                // --- Your Existing Food Logic Moved Here ---
-                if (yawye.IsRawFood(item)) { // Call the static method from your main class
+                if (yawye.IsRawFood(item)) {
                     int rnd = world.getRandom().nextInt(100);
-                    if (rnd > 60 && rnd <= 75) { // Corrected logic: 15% chance for Nausea only (61-75)
+                    if (rnd > 60) {
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 300, 0));
                         yawye.LOGGER.info("Applied NAUSEA to {} for eating raw food", player.getName().getString());
-                    } else if (rnd > 75) { // Corrected logic: 24% chance for Poison only (76-99)
+                    }
+                    if (rnd > 75) {
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 150, 0));
                         yawye.LOGGER.info("Applied POISON to {} for eating raw food", player.getName().getString());
                     }
-                    // If rnd <= 60, neither Nausea nor Poison from these specific blocks.
-                    // If you want a chance of both, use two separate 'if' statements as you had.
+
                 } else if (item == Items.APPLE) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 0));
                     yawye.LOGGER.info("Applied REGENERATION to {} for eating an APPLE", player.getName().getString());
@@ -59,7 +58,7 @@ public abstract class ItemFinishUsingMixin {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, 1200, 0));
                     yawye.LOGGER.info("Applied LUCK to {} for eating a GOLDEN item", player.getName().getString());
                 } else if (item == Items.CARROT) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 1, 0));
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 1, 0)); // Just a slight buff to carrots
                     yawye.LOGGER.info("Applied minor SATURATION to {} for eating a CARROT", player.getName().getString());
                 } else if (item == Items.MELON_SLICE) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 300, 0)); // Adjusted: 15s Water Breathing
@@ -68,25 +67,25 @@ public abstract class ItemFinishUsingMixin {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 400, 0)); // Adjusted: 20s Speed I
                     yawye.LOGGER.info("Applied SPEED to {} for eating a COOKIE", player.getName().getString());
                 } else if (item == Items.COOKED_BEEF) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0)); // Changed to Strength, adjusted: 30s Strength I
-                    yawye.LOGGER.info("Applied STRENGTH to {} for eating COOKED_BEEF", player.getName().getString());
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 600, 0)); // Skin like leather, adjusted: 30s
+                    yawye.LOGGER.info("Applied RESISTANCE to {} for eating COOKED_BEEF", player.getName().getString());
                 } else if (item == Items.COOKED_CHICKEN) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 600, 0)); // Adjusted: 30s
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 600, 0)); // Adjusted: 30s
                     yawye.LOGGER.info("Applied JUMP_BOOST & SLOW_FALLING to {} for eating COOKED_CHICKEN", player.getName().getString());
                 } else if (item == Items.COOKED_COD || item == Items.COOKED_SALMON) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 600, 0)); // Adjusted: 30s
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 600, 0)); // Adjusted: 30s
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 1200, 0)); // Adjusted: 60s
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 1200, 0)); // Adjusted: 60s
                     yawye.LOGGER.info("Applied DOLPHINS_GRACE & WATER_BREATHING to {} for eating COOKED_FISH", player.getName().getString());
                 } else if (item == Items.COOKED_MUTTON) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 400, 0)); // Adjusted: 20s
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 600, 0)); // Adjusted: 30s
                     yawye.LOGGER.info("Applied RESISTANCE to {} for eating COOKED_MUTTON", player.getName().getString());
                 } else if (item == Items.COOKED_PORKCHOP) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 400, 0)); // Adjusted: 20s
                     yawye.LOGGER.info("Applied ABSORPTION to {} for eating COOKED_PORKCHOP", player.getName().getString());
                 } else if (item == Items.COOKED_RABBIT) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0)); // Adjusted: 30s
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 600, 0)); // Adjusted: 30s
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 0)); // Adjusted: 30s
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 1200, 0)); // Adjusted: 30s
                     yawye.LOGGER.info("Applied SPEED & JUMP_BOOST to {} for eating COOKED_RABBIT", player.getName().getString());
                 } else if (item == Items.BREAD) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 1, 1));
@@ -98,11 +97,11 @@ public abstract class ItemFinishUsingMixin {
                     yawye.LOGGER.info("Applied STRENGTH & POISON to {} for eating ROTTEN_FLESH", player.getName().getString());
                     // Vanilla 80% chance of Hunger effect will still also apply
                 } else if (item == Items.HONEY_BOTTLE) { // Removed PUMPKIN_PIE from this line to give it its own effect
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 300, 0)); // 15s Speed I
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0)); // 30s Speed I
                     // Vanilla honey also clears poison, which is good.
                     yawye.LOGGER.info("Applied SPEED to {} for consuming HONEY_BOTTLE", player.getName().getString());
                 } else if (item == Items.PUMPKIN_PIE) {
-                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, 0)); // 20s Jump Boost
+                    player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 600, 0)); // 30s Jump Boost
                     yawye.LOGGER.info("Applied JUMP_BOOST to {} for eating PUMPKIN_PIE", player.getName().getString());
                 }
             }
