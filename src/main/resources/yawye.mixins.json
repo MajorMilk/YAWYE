@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.mlgmilk.yawye.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemFinishUsingMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,33 +1,26 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "yawye",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "You Are What You Eat",
+	"description": "Adds beneficial effects from eating food",
 	"authors": [
-		"Me!"
+		"MLGMilk"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "N/A",
+		"sources": "https://github.com/MajorMilk/YAWYE"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/modid/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.ExampleModClient"
+			"com.mlgmilk.yawye.yawye"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
+		"yawye.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
@@ -36,6 +29,5 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
 	}
 }
