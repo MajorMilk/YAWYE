@@ -22,7 +22,7 @@ YAWYE uses a Mixin to inject code into Minecraft's item usage logic. When a play
 
 Raw foods have a chance-based system for negative effects, while most cooked/prepared foods grant beneficial buffs.
 
-## Effects (Reflecting your current code)
+## Effects (Reflecting current code)
 
 *   **Apple:** Regeneration I (5 seconds)
 *   **Baked Potato:** Haste II (30 seconds)
