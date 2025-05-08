@@ -8,11 +8,11 @@
 		"MLGMilk"
 	],
 	"contact": {
-		"homepage": "N/A",
+		"homepage": "https://modrinth.com/project/yawye",
 		"sources": "https://github.com/MajorMilk/YAWYE"
 	},
 	"license": "MIT",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/yawye/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

@@ -31,7 +31,7 @@ Raw foods have a chance-based system for negative effects, while most cooked/pre
 *   **Golden Apple/Carrot/Enchanted Golden Apple:** Luck I (1 minute)
 *   **Cooked Beef:** Resistance I (30 seconds)
 *   **Cooked Chicken:** Jump Boost I (30s) & Slow Falling (30s)
-*   **Cooked Fish (Cod/Salmon):** Dolphin's Grace (30s) & Water Breathing (30s)
+*   **Cooked Fish (Cod/Salmon):** Dolphin's Grace (60s) & Water Breathing (60s)
 *   **Cookie:** Speed I (20 seconds)
 *   **Rotten Flesh:** Strength I (10s) + Poison I (5s) + Vanilla Hunger
 *   **Honey Bottle:** Speed I (15 seconds) (plus vanilla poison clear)
